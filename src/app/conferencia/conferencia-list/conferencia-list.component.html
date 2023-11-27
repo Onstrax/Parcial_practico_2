@@ -1,3 +1,26 @@
-<p>
-  conferencia-list works!
-</p>
+<h5>Upcoming conferences</h5>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Starts</th>
+      <th scope="col">Ends</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of conferencias">
+      <th scope="row">{{c.id}}</th>
+      <td (click)="onSelected(c)">{{c.name}}</td>
+      <td>{{c.starts}}</td>
+      <td>{{c.ends}}</td>
+    </tr>
+  </tbody>
+</table>
+<p>Upcoming conferences: {{upcoming}}</p>
+
+<div class="detalle" id="detalle">
+  <div *ngIf="selected">
+    <app-conferencia-detalle [conferencia]="selectedConferencia"></app-conferencia-detalle>
+  </div>
+</div>
