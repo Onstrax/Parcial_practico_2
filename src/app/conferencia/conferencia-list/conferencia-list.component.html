@@ -1,3 +1,5 @@
+<div class="contenido">
+<div class="contenedor">
 <h5>Upcoming conferences</h5>
 <table class="table">
   <thead class="thead-dark">
@@ -18,9 +20,11 @@
   </tbody>
 </table>
 <p>Upcoming conferences: {{upcoming}}</p>
+</div>
 
 <div class="detalle" id="detalle">
   <div *ngIf="selected">
     <app-conferencia-detalle [conferencia]="selectedConferencia"></app-conferencia-detalle>
   </div>
+</div>
 </div>
